@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bLKXyodq9VTT8nwxdyA8LC7NGhRfrHlO7rayBMFQNWL7tiTuox0xO2skA6VSCVLPoW+6psBBLZ9a9gARv+Yt+w==",
+  "success": true,
+  "projectFilePath": "/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/BedLoadTaskNew.csproj",
+  "expectedPackageFiles": [
+    "/home/andrey/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.0/microsoft.aspnetcore.app.ref.3.1.0.nupkg.sha512",
+    "/home/andrey/.nuget/packages/microsoft.netcore.app.host.linux-x64/3.1.0/microsoft.netcore.app.host.linux-x64.3.1.0.nupkg.sha512",
+    "/home/andrey/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

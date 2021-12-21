@@ -1,0 +1,13 @@
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/bin/Debug/netcoreapp3.1/BedLoadTaskNew
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/bin/Debug/netcoreapp3.1/BedLoadTaskNew.deps.json
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/bin/Debug/netcoreapp3.1/BedLoadTaskNew.runtimeconfig.json
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/bin/Debug/netcoreapp3.1/BedLoadTaskNew.runtimeconfig.dev.json
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/bin/Debug/netcoreapp3.1/BedLoadTaskNew.dll
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/bin/Debug/netcoreapp3.1/BedLoadTaskNew.pdb
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.csprojAssemblyReference.cache
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.AssemblyInfoInputs.cache
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.AssemblyInfo.cs
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.csproj.CoreCompileInputs.cache
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.dll
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.pdb
+/mnt/d/work/BedLoadTaskAv/BedLoadTaskNew/obj/Debug/netcoreapp3.1/BedLoadTaskNew.genruntimeconfig.cache
