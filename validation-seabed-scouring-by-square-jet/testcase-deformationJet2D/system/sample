@@ -1,0 +1,70 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+sample
+{
+    libs            (sampling);
+    type            surfaces;
+
+    setFormat       raw;
+    surfaceFormat   raw;
+    
+    writeControl    writeTime;
+    interpolationScheme cellPointFace;//PatchConstrained;  //<- default
+
+    fields          (p U wallShearStress k epsilon nut);
+
+    surfaces
+    {
+        yNormal
+        {
+            type            cuttingPlane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                point   (0 0 0);
+                normal  (0 1 0);
+            }
+            interpolate     false;
+            surfaceFormat   vtk;
+        }   
+    
+        yNormal_i
+        {
+            type            cuttingPlane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                point   (0 0 0);
+                normal  (0 1 0);
+            }
+            interpolate     true;
+            surfaceFormat   vtk;
+        }
+        
+        down_vtk
+        {
+            type            patch;
+            patches         (down);
+            interpolate     false;
+            surfaceFormat   vtk;
+        }
+        
+        down_vtk_i
+        {
+            type            patch;
+            patches         (down);
+            interpolate true;
+            triangulate true;
+            surfaceFormat   vtk;
+        }
+        
+    }
+}
+
+// ************************************************************************* //

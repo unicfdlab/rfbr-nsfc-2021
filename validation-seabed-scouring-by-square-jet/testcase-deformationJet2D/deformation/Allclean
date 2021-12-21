@@ -1,0 +1,4 @@
+#!/bin/sh
+ls | grep -v ImportDataDefault.txt | grep -v AllrunDeform | grep -v Allclean | grep -v i0 | grep -v BLParams.txt | grep -v BedLoadTask.dll | grep -v Consolidation2D.py | grep -v Diversity2D.py | xargs rm -rfv
+
+

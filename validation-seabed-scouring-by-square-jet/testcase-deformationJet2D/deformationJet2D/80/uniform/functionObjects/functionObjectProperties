@@ -1,0 +1,59 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "80/uniform/functionObjects";
+    object      functionObjectProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+getValue
+{
+    p
+    {
+        file            "<case>/postProcessing/getValue/80/down_foam/scalarField/p";
+    }
+    wallShearStress
+    {
+        file            "<case>/postProcessing/getValue/80/down_foam/vectorField/wallShearStress";
+    }
+}
+
+sample
+{
+    epsilon
+    {
+        file            "<case>/postProcessing/sample/80/down_vtk_i.vtp";
+    }
+    k
+    {
+        file            "<case>/postProcessing/sample/80/down_vtk_i.vtp";
+    }
+    nut
+    {
+        file            "<case>/postProcessing/sample/80/down_vtk_i.vtp";
+    }
+    p
+    {
+        file            "<case>/postProcessing/sample/80/down_vtk_i.vtp";
+    }
+    U
+    {
+        file            "<case>/postProcessing/sample/80/down_vtk_i.vtp";
+    }
+    wallShearStress
+    {
+        file            "<case>/postProcessing/sample/80/down_vtk_i.vtp";
+    }
+}
+
+
+// ************************************************************************* //

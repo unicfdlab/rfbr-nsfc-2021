@@ -1,0 +1,17 @@
+#!/bin/sh
+# Source tutorial run functions
+iter=100
+time=100
+
+for ((i=1; i<=$iter; i++))
+do
+    pimpleFoam
+    cp -r postProcessing/getValue/$time/down_foam/* deformation/
+    cd deformation/
+    ./AllrunDeform
+    cd ../
+    mv postProcessing postProcessing_i$i
+    rm -rf 100/
+done
+
+

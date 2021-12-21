@@ -1,0 +1,9 @@
+rho_w 1000
+rho_s 2650
+phi 30
+d50 0.0008
+epsilon 0.375
+kappa 0.25
+cx 0.45
+f 0.1
+Avalanche 1

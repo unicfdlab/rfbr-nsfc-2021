@@ -1,0 +1,36 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+getValue
+{
+    libs            (sampling);
+    type            surfaces;
+
+    setFormat       raw;
+    surfaceFormat   raw;
+    
+    writeControl    writeTime;
+    interpolationScheme cellPatchConstrained;  //<- default
+
+    fields          (p wallShearStress);
+
+    surfaces
+    {
+        down_foam
+        {
+            // Sampling on triSurface
+            type        patch;
+            patches     (down);
+            interpolate true;
+            triangulate true;
+            surfaceFormat   foam;
+        }
+    }
+}
+
+// ************************************************************************* //

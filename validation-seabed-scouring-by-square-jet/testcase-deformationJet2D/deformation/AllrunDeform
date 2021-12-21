@@ -1,0 +1,13 @@
+#!/bin/sh
+# Source tutorial run functions
+    cp scalarField/p .
+    cp vectorField/wallShearStress .
+    python ./Consolidation2D.py
+
+    cat ImportData.txt > ImportDataDefault.txt
+
+    mono BedLoadTask.dll 0.1 #where 0.1 is dt
+    python3 ./Diversity2D.py
+    cp -rf pointDisplacement ../constant/boundaryData/down/80
+
+    ./Allclean

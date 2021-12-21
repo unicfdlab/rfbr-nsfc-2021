@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+application     pimpleFoam;
+
+startFrom       startTime;
+
+startTime       80;
+
+stopAt          endTime;
+
+endTime         100;
+
+deltaT          1e-10;
+
+writeControl    adjustable;//timeStep;
+
+writeInterval   20;
+
+purgeWrite      10;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+adjustTimeStep  yes;
+
+maxCo           1;
+
+functions
+{
+    #include "wallShearStress"
+    #include "getValue"
+    #include "sample"
+}
+
+// ************************************************************************* //
