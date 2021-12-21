@@ -14,5 +14,5 @@ Validation cases
 
 Source code
 -----------
-Numerical model of seabed dynamics is implemented as [Mono](https://en.wikipedia.org/wiki/Mono_(software)) source code library. Source codes are stored [here](https://github.com/unicfdlab/rfbr-nsfc-2021/tree/main/sources/BedLoadTask)
+Numerical model of seabed dynamics is implemented as [Mono](https://en.wikipedia.org/wiki/Mono_(software)) source code library. Source codes are stored [here](https://github.com/unicfdlab/rfbr-nsfc-2021/tree/main/sources/BedLoadTask).  [Binary DLL file is also available](https://github.com/unicfdlab/rfbr-nsfc-2021/blob/main/sources/BedLoadTask/bin/BedLoadTask.dll)
 
