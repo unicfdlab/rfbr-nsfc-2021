@@ -1,0 +1,169 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale   1;
+
+b 0.015;
+l 0.4;
+hW 0.163;
+h   0.0018;
+H   #eval{$b+$h};
+H2  #eval{$hW};
+x1  #eval{-$l};
+x2  #eval{80*$b};
+dz1  #eval{-0.15*$b};
+dz2  #eval{0.15*$b};
+
+vertices
+(
+    (0 0 $dz1) //0
+    ($x2 0 $dz1)  //1
+    ($x2 $h $dz1) //2
+    (0 $h $dz1) //3
+    (0 0  $dz2)   //4
+    ($x2 0  $dz2)  //5
+    ($x2 $h  $dz2) //6
+    (0 $h  $dz2) //7
+    
+    ($x2 $H $dz1) //8
+    (0 $H $dz1) //9
+    ($x2 $H  $dz2) //10
+    (0 $H  $dz2) //11
+    
+    ($x1 $h $dz1) //12
+    ($x1 $H $dz1) //13
+    ($x1 $h  $dz2) //14
+    ($x1 $H  $dz2) //15
+    
+    ($x2 $H2 $dz1) //16
+    (0 $H2 $dz1) //17
+    ($x2 $H2  $dz2) //18
+    (0 $H2  $dz2) //19
+    
+    ($x1 $H2  $dz1) //20
+    ($x1 $H2  $dz2) //21
+);
+
+blocks
+(
+    hex (0  1  2  3 4 5  6  7) (250 2 1) simpleGrading (6 1 1)
+    hex (3  2  8  9 7 6 10 11) (250 10 1) simpleGrading (6 1 1)
+    hex (12 3 9 13 14 7 11 15) (280 10 1) simpleGrading (1 1 1)
+    hex (9  8 16 17 11 10 18 19) (250 30 1) simpleGrading (6 8 1)
+    hex (13 9 17 20 15 11 19 21) (280 30 1) simpleGrading (1 8 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    slipWall
+    {
+        type wall;
+        faces
+        (
+            (12 3 7 14)
+        );
+    }
+    
+    hWall
+    {
+        type wall;
+        faces
+        (
+            (0 4 7 3)
+        );
+    }
+    
+    top
+    {
+        type wall;
+        faces
+        (
+            (20 17 19 21)
+            (17 16 18 19)
+        );
+    }
+    
+    left
+    {
+        type wall;
+        faces
+        (
+            (13 15 21 20)
+        );
+    }
+    
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (12 14 15 13)
+        );
+    }
+    side1
+    {
+        type empty;
+        faces
+        (
+            (4 5 6 7)
+            (7 6 10 11)
+            (11 15 14 7)
+            (11 10 18 19)
+            (15 11 19 21)
+        );
+    }
+    
+    side2
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)
+            (3 2 8 9)
+            (3 9 13 12)
+            (9 8 16 17)
+            (13 9 17 20)
+        );
+    }
+    
+    right
+    {
+        type patch;
+        faces
+        (
+            (1 5 6 2)
+            (2 6 10 8)
+            (8 10 18 16)
+        );
+    }
+
+    down
+    {
+        type wall;
+        faces
+        (
+            (1 5 4 0)
+        );
+    }
+
+);
+
+// ************************************************************************* //

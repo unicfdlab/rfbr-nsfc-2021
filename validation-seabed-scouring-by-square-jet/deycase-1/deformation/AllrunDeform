@@ -1,0 +1,33 @@
+#!/bin/sh
+# Source tutorial run functions
+iter=2
+
+cp scalarField/p .
+cp vectorField/wallShearStress .
+python ./Consolidation2D.py
+
+cat ImportData.txt > ImportDataDefault.txt
+
+for ((i=1; i<=$iter; i++))
+do
+    echo "ITERATION = $i"
+    #dt=0.001
+    mono BedLoadTask.dll 0.5 0.001 ImportData.txt ExportData.txt BLParams.txt
+    let "rem = $i % 1"
+    if [ "$rem" = "0" ]
+    then
+       python3 ./Diversity2D.py
+       cat pointDisplacement > cellDisplacement_i$i
+       mv  ImportData.txt ImportData_i$i.txt
+       mv  ExportData.txt ExportData_i$i.txt
+    else
+       rm ImportData.txt
+    fi
+#
+    mv MExportData.txt ImportData.txt
+
+done
+#deltaT = iter*dt =2*0.001=0.002
+mv cellDisplacement_i$iter cellDisplacement
+cp -rf cellDisplacement ../constant/boundaryData/down/0
+./Allclean

@@ -1,0 +1,83 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    slipWall
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          280;
+        startFace       46978;
+    }
+    hWall
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          2;
+        startFace       47258;
+    }
+    top
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          580;
+        startFace       47260;
+    }
+    left
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          30;
+        startFace       47840;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          10;
+        startFace       47870;
+    }
+    side1
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          23800;
+        startFace       47880;
+    }
+    side2
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          23800;
+        startFace       71680;
+    }
+    right
+    {
+        type            patch;
+        nFaces          42;
+        startFace       95480;
+    }
+    down
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          300;
+        startFace       95522;
+    }
+)
+
+// ************************************************************************* //
